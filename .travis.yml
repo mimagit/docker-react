@@ -8,3 +8,16 @@ before_install:
 
 script:
   - docker run miroslavstancic/docker-react npm run test -- --coverage
+
+# deploy:
+#  provider: elasticbeanstalk # travis have preconfigured aws elasticbeanstalk - elasticbeanstalk have preconfigured loadbalncer
+#  region: "us-east-1" # aws reagion of service
+#  app: "my-aws-service-name-eg-docker-react"
+#  env: "Docker-env" # the environment that is choose'n  setup of aws service
+#  bucket_name: "elasticbeanstalk-us-east-1-2-306476627547" # the name of the bucket on S3 related to region to which elasticbeanstalk service belongs to
+#  bucket_path: "my-aws-service-name-eg-docker-react"
+#  on:
+#    branch: master
+#  access_key_id: $AWS_ACCESS_KEY # the access key that is generated for user that is setup to have access policy for elasticbeanstalk service we are using
+#  secret_access_key:
+#    secure: "$AWS_SECRET_KEY" # the secret key that is generated for user that is setup to have access policy for elasticbeanstalk service we are using
