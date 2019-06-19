@@ -6,5 +6,5 @@ COPY . .
 RUN npm run build
 
 FROM nginx
-EXPOSE 80 # elasticbeanstock-aws specific
+# EXPOSE 80 # elasticbeanstock-aws specific
 COPY --from=builder /app/build /usr/share/nginx/html
